@@ -1,5 +1,5 @@
 import express from 'express'
-import { crearPersona, obtenerPersona, obtenerUno, borrarUno } from '../components/notas/controller'
+import { crearCuenta, obtenerCuenta, obtenerUno, borrarUno } from '../components/cuentas/controller'
 
 const router = express.Router()
 
@@ -7,11 +7,11 @@ router.get('/', async (_, response, next) => {
   response.send('<h1>Hello World!</h1>')
 })
 
-router.get('/api/personas', obtenerPersona)
+router.get('/api/personas', obtenerCuenta)
 
 router.get('/api/personas/:id', obtenerUno)
 
-router.post('/api/personas', crearPersona)
+router.post('/api/personas', crearCuenta)
 
 router.get('/info', (_, res) => {
   const persons = obtenerPersona.length
